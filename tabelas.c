@@ -18,10 +18,10 @@ int main()
     printf("--------------------------------------------------\n\n");
 
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-    printf("1- Cursos\n");
+    printf("1- hoteis\n");
     printf("2- Unidades Curriculares\n");
-    printf("3- Alunos\n");
-    printf("4- Notas\n");
+    printf("3- clientes\n");
+    printf("4- Quarto\n");
     printf("5- Voltar\n\n");
 
     printf("Opção selecionada?   ");

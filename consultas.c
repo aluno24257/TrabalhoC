@@ -4,9 +4,9 @@ int main()
 {
     int menu;
     char *args[4][2]={
-        {"./l_alunos",NULL},
+        {"./l_clientes",NULL},
         {"./l_uc",NULL},
-        {"./l_uc_notas",NULL},
+        {"./l_uc_quartos",NULL},
         {"./index",NULL}
     };
 
@@ -17,7 +17,7 @@ int main()
     printf("--------------------------------------------------\n\n");
 
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-    printf("1- Listar alunos\n");
+    printf("1- Listar Clientes\n");
     printf("2- Listar unidades curriculares\n");
     printf("3- Listar unidades, notas e médias\n");
     printf("4- Voltar\n\n");

@@ -13,7 +13,7 @@
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("Sistema de Registos Escolar\n");
+    printf("Sistema de Registos de Quartos\n");
     printf("--------------------------------------------------\n\n");
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Tabelas\n");
