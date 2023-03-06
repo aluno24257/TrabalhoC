@@ -13,7 +13,7 @@ int main()
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("OPERAÇÕES CRUD: Notas\n");
+    printf("OPERAÇÕES CRUD: quarto\n");
     printf("--------------------------------------------------\n");
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Listar dados\n");
@@ -121,10 +121,10 @@ void listar()
     printf("--------|--------------------------|------\n");
     printf("ID aluno| ID da Unidade Curricular | Nota \n");
     printf("--------|--------------------------|------\n");
-    file = fopen("./storage/notas.txt", "r");
+    file = fopen("./storage/quarto.txt", "r");
     if(file == NULL)
     {
-        printf("Repositório de notas inacessivel!\n\n\n\n\n");
+        printf("Repositório de quarto inacessivel!\n\n\n\n\n");
     }
     else
     {
@@ -147,12 +147,12 @@ void adicionar()
     char data[500], data2[500], *id, *compare, count[10], IDaluno[10], IDuc[10], nota[10], dump;
     const char s[2] = " ";
 
-    file_old = fopen("./storage/notas.txt", "r");
-    file_new = fopen("./storage/notas_new.txt", "a");
+    file_old = fopen("./storage/quarto.txt", "r");
+    file_new = fopen("./storage/quarto_new.txt", "a");
     
     if(file_old == NULL)
     {
-        printf("Repositório de notas inacessivel!\n\n\n\n\n");
+        printf("Repositório de quarto inacessivel!\n\n\n\n\n");
     }
     else
     {
@@ -173,11 +173,11 @@ void adicionar()
         fclose(file_old);
 
         printf("\e[2J\e[H");
-        printf("\n\nInsira o ID do aluno: ");
+        printf("\n\nInsira o ID do cliente: ");
         scanf("%s",IDaluno);
         printf("Insira o ID da Unidade Curricular a avaliar: ");
         scanf("%s",IDuc);
-        printf("Insira a nota correspondente: ");
+        printf("Insira a quarto correspondente: ");
         scanf("%s",nota);
         fputs("\n",file_new);
         fputs(IDaluno ,file_new);
@@ -189,9 +189,9 @@ void adicionar()
         fclose(file_new);
 
         /*apagar file_old*/
-        remove("./storage/notas.txt");
+        remove("./storage/quarto.txt");
         /*renomear file_new para curso.txt*/
-        rename("./storage/notas_new.txt", "./storage/notas.txt"); 
+        rename("./storage/quarto_new.txt", "./storage/quarto.txt"); 
     }
 }
 
@@ -207,12 +207,12 @@ void eliminar()
     printf("\e[2J\e[H"); /*CLEAR*/
     listar();
     /* */
-    file_old = fopen("./storage/notas.txt", "r");
-    file_new = fopen("./storage/notas_new.txt", "a");
+    file_old = fopen("./storage/quarto.txt", "r");
+    file_new = fopen("./storage/quarto_new.txt", "a");
     
     if(file_old == NULL)
     {
-        printf("Repositório de cursos inacessivel!\n\n\n\n\n");
+        printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
     }
     else
     {
@@ -259,14 +259,14 @@ void eliminar()
         if(isDeleted = true)
         {
             /*apagar file_old*/
-            remove("./storage/notas.txt");
+            remove("./storage/quarto.txt");
             /*renomear file_new para curso.txt*/
-            rename("./storage/notas_new.txt", "./storage/notas.txt");
+            rename("./storage/quarto_new.txt", "./storage/quarto.txt");
         }
         else
         {
             /* apagar file_new*/
-            remove("./storage/notas_new.txt");
+            remove("./storage/quarto_new.txt");
         }
     }
 }
@@ -282,7 +282,7 @@ void editar()
     printf("\e[2J\e[H");
     listar();
     file_old = fopen("./storage/hoteis.txt", "r");
-    file_new = fopen("./storage/curso_new.txt", "a");
+    file_new = fopen("./storage/hoteis_new.txt", "a");
     if(file_old == NULL)
     {
         printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
@@ -334,9 +334,9 @@ void editar()
         if(isEdited = true)
         {
             /*apagar file_old*/
-            remove("./storage/curso.txt");
+            remove("./storage/hoteis.txt");
             /*renomear file_new para curso.txt*/
-            rename("./storage/curso_new.txt", "./storage/curso.txt");
+            rename("./storage/curso_new.txt", "./storage/hoteis.txt");
         }
         else
         {

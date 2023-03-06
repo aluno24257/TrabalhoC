@@ -5,7 +5,7 @@ int main()
     int menu;
     char *args[5][2]={
         {"./bin/CRUD_hoteis",NULL},
-        {"./bin/CRUD_uni_curric",NULL},
+        {"./bin/CRUD_GRUPOHOTELEIRO",NULL},
         {"./bin/CRUD_clientes",NULL},
         {"./bin/CRUD_quarto",NULL},
         {"./bin/index",NULL}
@@ -19,7 +19,7 @@ int main()
 
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- hoteis\n");
-    printf("2- Unidades Curriculares\n");
+    printf("2- GRUPOHOTELEIRO\n");
     printf("3- clientes\n");
     printf("4- Quarto\n");
     printf("5- Voltar\n\n");
