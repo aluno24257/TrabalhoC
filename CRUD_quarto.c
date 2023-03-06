@@ -216,9 +216,9 @@ void eliminar()
     }
     else
     {
-        printf("\n\nInserir ID do aluno: ");
+        printf("\n\nInserir ID do cliente: ");
         scanf("%s",idA);
-        printf("\nInserir ID do curso: ");
+        printf("\nInserir ID do hotel: ");
         scanf("%s",id);
         
         /*Counter Updater*/
@@ -281,15 +281,15 @@ void editar()
 
     printf("\e[2J\e[H");
     listar();
-    file_old = fopen("./storage/curso.txt", "r");
+    file_old = fopen("./storage/hoteis.txt", "r");
     file_new = fopen("./storage/curso_new.txt", "a");
     if(file_old == NULL)
     {
-        printf("Repositório de cursos inacessivel!\n\n\n\n\n");
+        printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
     }
     else
     {
-        printf("\n\nInserir ID do curso a editar: ");
+        printf("\n\nInserir ID do hoteis a editar: ");
         scanf("%s",id);
         
         /* salta a primeira linha do documento - contagem - e escreve-a no novo registo*/
@@ -315,9 +315,9 @@ void editar()
                 printf("\e[2J\e[H");
                 printf("Valores anteriores: \n");
                 printf("%s",data2);
-                printf("\n\nInsira o novo ID do curso: ");
+                printf("\n\nInsira o novo ID do hoteis: ");
                 scanf("%s",IDcurso);
-                printf("Insira a nova descrição para o curso: ");
+                printf("Insira a nova descrição para o hotel: ");
                 scanf("%c", &dump);
                 scanf("%[^\n]",Name);
                 fputs(IDcurso ,file_new);

@@ -1,7 +1,0 @@
-6
-10 120 Programação Orientada por Objetos 6.0 2 1
-15 120 Planeamento e Gestão de Projetos 6.0 3 1
-20 120 Programação e Algoritmia 7.0 1 1
-40 120 Matemática Discreta 5.5 1 1
-21 110 Montagem I 6.0 1 1
-11 110 Estágio 30.0 3 2

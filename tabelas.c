@@ -4,10 +4,10 @@ int main()
 {
     int menu;
     char *args[5][2]={
-        {"./bin/CRUD_cursos",NULL},
+        {"./bin/CRUD_hoteis",NULL},
         {"./bin/CRUD_uni_curric",NULL},
-        {"./bin/CRUD_alunos",NULL},
-        {"./bin/CRUD_notas",NULL},
+        {"./bin/CRUD_clientes",NULL},
+        {"./bin/CRUD_quarto",NULL},
         {"./bin/index",NULL}
     };
 
