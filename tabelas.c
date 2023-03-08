@@ -4,11 +4,11 @@ int main()
 {
     int menu;
     char *args[5][2]={
-        {"./bin/HOTEL",NULL},
-        {"./bin/GRUPOHOTELEIRO",NULL},
-        {"./bin/CLIENTE",NULL},
-        {"./bin/TIPOQUARTO",NULL},
-        {"./bin/RESEVAS",NULL}
+        {"./bin/CRUD_hoteis",NULL},
+        {"./bin/CRUD_GRUPOHOTELEIRO",NULL},
+        {"./bin/CRUD_clentes",NULL},
+        {"./bin/CRUD_quartos",NULL},
+        {"./bin/index",NULL}
     };
 
     boot:

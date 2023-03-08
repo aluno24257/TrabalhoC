@@ -4,7 +4,7 @@ int main()
 {
     int menu;
     char *args[4][2]={
-        {"./l_clientes",NULL},
+        {"./l_CLIENTE",NULL},
         {"./l_uc",NULL},
         {"./l_uc_quartos",NULL},
         {"./index",NULL}

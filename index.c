@@ -13,7 +13,7 @@
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("Sistema de Registos de Quartos\n");
+    printf("Sistema de Registos Escolar\n");
     printf("--------------------------------------------------\n\n");
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Tabelas\n");
@@ -59,5 +59,21 @@
 
  void warning()
     {
-        printf("Warning");                                           
+        printf("                       #####                      \n");
+        printf("                     #########                    \n");
+        printf("                   ####/   #####                  \n");
+        printf("                  ####       ####                 \n");
+        printf("                ,####         ####                \n");
+        printf("               ####    @@@@@    ####              \n");
+        printf("              ####     @@@@@     ####             \n");
+        printf("            #####      @@@@@      #####           \n");
+        printf("           ####        @@@@         ####          \n");
+        printf("          ####          @@@          ####         \n");
+        printf("        ####            @@@           /####       \n");
+        printf("       ####                             ####      \n");
+        printf("     #####               *               ####,    \n");
+        printf("    ####               @@@@@               ####   \n");
+        printf("   ####                                     ####  \n");
+        printf("   #############################################  \n");
+        printf("     #########################################    \n");                                            
     }
