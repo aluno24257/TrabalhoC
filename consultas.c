@@ -6,7 +6,7 @@ int main()
     char *args[4][2]={
         {"./l_CLIENTE",NULL},
         {"./l_uc",NULL},
-        {"./l_uc_quartos",NULL},
+        {"./l_uc_QUARTO",NULL},
         {"./index",NULL}
     };
 

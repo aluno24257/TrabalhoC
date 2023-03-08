@@ -6,7 +6,7 @@ int main()
     char *args[5][2]={
         {"./bin/CRUD_hoteis",NULL},
         {"./bin/CRUD_GRUPOHOTELEIRO",NULL},
-        {"./bin/CRUD_clentes",NULL},
+        {"./bin/CRUD_clientes",NULL},
         {"./bin/CRUD_quartos",NULL},
         {"./bin/index",NULL}
     };

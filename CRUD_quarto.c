@@ -121,7 +121,7 @@ void listar()
     printf("--------|--------------------------|------\n");
     printf("ID aluno| ID da Unidade Curricular | Nota \n");
     printf("--------|--------------------------|------\n");
-    file = fopen("./storage/quarto.txt", "r");
+    file = fopen("./storage/QUARTO.txt", "r");
     if(file == NULL)
     {
         printf("Repositório de quarto inacessivel!\n\n\n\n\n");
@@ -147,7 +147,7 @@ void adicionar()
     char data[500], data2[500], *id, *compare, count[10], IDaluno[10], IDuc[10], nota[10], dump;
     const char s[2] = " ";
 
-    file_old = fopen("./storage/quarto.txt", "r");
+    file_old = fopen("./storage/QUARTO.txt", "r");
     file_new = fopen("./storage/quarto_new.txt", "a");
     
     if(file_old == NULL)
