@@ -281,7 +281,7 @@ void editar()
 
     printf("\e[2J\e[H");
     listar();
-    file_old = fopen("./storage/hoteis.txt", "r");
+    file_old = fopen("./storage/HOTEL.txt", "r");
     file_new = fopen("./storage/hoteis_new.txt", "a");
     if(file_old == NULL)
     {
@@ -334,14 +334,14 @@ void editar()
         if(isEdited = true)
         {
             /*apagar file_old*/
-            remove("./storage/hoteis.txt");
-            /*renomear file_new para curso.txt*/
-            rename("./storage/curso_new.txt", "./storage/hoteis.txt");
+            remove("./storage/HOTEL.txt");
+            /*renomear file_new para HOTEL.txt*/
+            rename("./storage/curso_new.txt", "./storage/HOTEL.txt");
         }
         else
         {
             /* apagar file_new*/
-            remove("./storage/curso_new.txt");
+            remove("./storage/HOTEL_new.txt");
         }
     }
 }
