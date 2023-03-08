@@ -1,0 +1,25 @@
+6
+10000 100100 5
+Holiday Inn Pine Grove
+Portland
+United States of America
+10010 100100 4
+El Gato Almiscarado
+Mexico City
+Mexico
+10020 100100 4
+Paradise Mystical Hotel
+Providence
+United States of America
+10030 100200 4
+Samarkand Lodge
+Samarkand
+Uzbekistan
+10100 200000 4
+Hotel Central
+Porto
+Portugal
+99999 200000 5
+Palace Royal
+Porto
+Portugal

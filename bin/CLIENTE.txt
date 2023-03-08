@@ -1,0 +1,19 @@
+3
+500001 111000111 M
+Samuel Francisco
+Reis Marto
+samuel.francisco@gmail.com
+Tomar
+Portugal
+500200 222333444 M
+Samuel Salvador
+Costa e Silva
+s.costa@hotmail.com
+Lisboa
+Portugal
+500303 333222333 F
+Mary Lee
+Renaldo
+renaldo@gmail.com
+London
+United Kingdom

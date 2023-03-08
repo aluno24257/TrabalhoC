@@ -271,7 +271,7 @@ void editar()
 
     printf("\e[2J\e[H");
     listar();
-    file_old = fopen("./storage/hoteis.txt", "r");
+    file_old = fopen("./bin/hoteis.txt", "r");
     file_new = fopen("./storage/hoteis_new.txt", "a");
     if(file_old == NULL)
     {
