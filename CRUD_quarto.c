@@ -276,7 +276,7 @@ void editar()
     int num;
     bool isEdited = false;
     FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10], IDcurso[5], Name[100], dump;
+    char data[500], data2[500], *id, *compare, count[10], IDquarto[5], Name[100], dump;
     const char s[2] = " ";
 
     printf("\e[2J\e[H");
@@ -316,11 +316,11 @@ void editar()
                 printf("Valores anteriores: \n");
                 printf("%s",data2);
                 printf("\n\nInsira o novo ID do hoteis: ");
-                scanf("%s",IDcurso);
+                scanf("%s",IDquarto);
                 printf("Insira a nova descrição para o hotel: ");
                 scanf("%c", &dump);
                 scanf("%[^\n]",Name);
-                fputs(IDcurso ,file_new);
+                fputs(IDquarto ,file_new);
                 fputs(" " ,file_new);
                 fputs(Name,file_new);
                 fputs("\n",file_new);
