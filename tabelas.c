@@ -7,7 +7,7 @@ int main()
         {"./bin/CRUD_hoteis",NULL},
         {"./bin/CRUD_GRUPOHOTELEIRO",NULL},
         {"./bin/CRUD_clientes",NULL},
-        {"./bin/CRUD_quartos",NULL},
+        {"./bin/CRUD_quarto",NULL},
         {"./bin/index",NULL}
     };
 

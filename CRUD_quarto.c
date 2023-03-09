@@ -175,7 +175,7 @@ void adicionar()
         printf("\e[2J\e[H");
         printf("\n\nInsira o ID do cliente: ");
         scanf("%s",IDaluno);
-        printf("Insira o ID da Unidade Curricular a avaliar: ");
+        printf("Insira o ID do Grupo Hoteleiro a avaliar: ");
         scanf("%s",IDuc);
         printf("Insira a quarto correspondente: ");
         scanf("%s",nota);
@@ -207,8 +207,8 @@ void eliminar()
     printf("\e[2J\e[H"); /*CLEAR*/
     listar();
     /* */
-    file_old = fopen("./storage/quarto.txt", "r");
-    file_new = fopen("./storage/quarto_new.txt", "a");
+    file_old = fopen("./storage/QUARTO.txt", "r");
+    file_new = fopen("./storage/QUARTO_new.txt", "a");
     
     if(file_old == NULL)
     {
@@ -259,14 +259,14 @@ void eliminar()
         if(isDeleted = true)
         {
             /*apagar file_old*/
-            remove("./storage/quarto.txt");
+            remove("./storage/QUARTO.txt");
             /*renomear file_new para curso.txt*/
-            rename("./storage/quarto_new.txt", "./storage/quarto.txt");
+            rename("./storage/QUARTO_new.txt", "./storage/quarto.txt");
         }
         else
         {
             /* apagar file_new*/
-            remove("./storage/quarto_new.txt");
+            remove("./storage/QUARTO_new.txt");
         }
     }
 }
@@ -282,7 +282,7 @@ void editar()
     printf("\e[2J\e[H");
     listar();
     file_old = fopen("./storage/HOTEL.txt", "r");
-    file_new = fopen("./storage/hoteis_new.txt", "a");
+    file_new = fopen("./storage/HOTEL_new.txt", "a");
     if(file_old == NULL)
     {
         printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
@@ -336,7 +336,7 @@ void editar()
             /*apagar file_old*/
             remove("./storage/HOTEL.txt");
             /*renomear file_new para HOTEL.txt*/
-            rename("./storage/curso_new.txt", "./storage/HOTEL.txt");
+            rename("./storage/HOTEL_new.txt", "./storage/HOTEL.txt");
         }
         else
         {
