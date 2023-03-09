@@ -122,7 +122,7 @@ void listar()
     printf("---|---------------------\n");
     printf("ID | Descrição do hotel\n");
     printf("---|---------------------\n");
-    file = fopen("./storage/HOTEL.txt", "r");
+    file = fopen("./storage/TIPOQUARTO.txt", "r");
     if(file == NULL)
     {
         printf("Repositório de HOTELs inacessivel!\n\n\n\n\n");
@@ -149,8 +149,8 @@ void adicionar()
     char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump;
     const char s[2] = " ";
 
-    file_old = fopen("./storage/HOTEL.txt", "r");
-    file_new = fopen("./storage/HOTEL_new.txt", "a");
+    file_old = fopen("./storage/TIPOQUARTO.txt", "r");
+    file_new = fopen("./storage/TIPOQUARTO_new.txt", "a");
     
     if(file_old == NULL)
     {
@@ -188,9 +188,9 @@ void adicionar()
         fclose(file_new);
 
         /*apagar file_old*/
-        remove("./storage/HOTEL.txt");
-        /*renomear file_new para HOTEL.txt*/
-        rename("./storage/HOTEL_new.txt", "./storage/HOTEL.txt"); 
+        remove("./storage/TIPOQUARTO.txt");
+        /*renomear file_new para TIPOQUARTO.txt*/
+        rename("./storage/TIPOQUARTO_new.txt", "./storage/TIPOQUARTO.txt"); 
     }
 }
 
@@ -205,8 +205,8 @@ void eliminar()
     printf("\e[2J\e[H"); /*CLEAR*/
     listar();
     /* */
-    file_old = fopen("./storage/HOTEL.txt", "r");
-    file_new = fopen("./storage/HOTEL_new.txt", "a");
+    file_old = fopen("./storage/TIPOQUARTO.txt", "r");
+    file_new = fopen("./storage/TIPOQUARTO_new.txt", "a");
     
     if(file_old == NULL)
     {
@@ -249,14 +249,14 @@ void eliminar()
         if(isDeleted = true)
         {
             /*apagar file_old*/
-            remove("./storage/HOTEL.txt");
-            /*renomear file_new para HOTEL.txt*/
-            rename("./storage/HOTEL_new.txt", "./storage/HOTEL.txt");
+            remove("./storage/TIPOQUARTO.txt");
+            /*renomear file_new para TIPOQUARTO.txt*/
+            rename("./storage/TIPOQUARTO_new.txt", "./storage/TIPOQUARTO.txt");
         }
         else
         {
             /* apagar file_new*/
-            remove("./storage/HOTEL_new.txt");
+            remove("./storage/TIPOQUARTO_new.txt");
         }
     }
 }
@@ -271,8 +271,8 @@ void editar()
 
     printf("\e[2J\e[H");
     listar();
-    file_old = fopen("./bin/HOTEL.txt", "r");
-    file_new = fopen("./storage/HOTEL_new.txt", "a");
+    file_old = fopen("./bin/TIPOQUARTO.txt", "r");
+    file_new = fopen("./storage/TIPOQUARTO_new.txt", "a");
     if(file_old == NULL)
     {
         printf("Repositório de Hotel inacessivel!\n\n\n\n\n");
@@ -324,14 +324,14 @@ void editar()
         if(isEdited = true)
         {
             /*apagar file_old*/
-            remove("./storage/HOTEL.txt");
-            /*renomear file_new para HOTEL.txt*/
-            rename("./storage/HOTEL_new.txt", "./storage/HOTEL.txt");
+            remove("./storage/TIPOQUARTO.txt");
+            /*renomear file_new para TIPOQUARTO.txt*/
+            rename("./storage/TIPOQUARTO_new.txt", "./storage/TIPOQUARTO.txt");
         }
         else
         {
             /* apagar file_new*/
-            remove("./storage/HOTEL_new.txt");
+            remove("./storage/TIPOQUARTO_new.txt");
         }
     }
 }
