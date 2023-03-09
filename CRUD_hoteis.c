@@ -13,7 +13,7 @@ int main()
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("OPERAÇÕES CRUD: HOTELs\n");
+    printf("OPERAÇÕES CRUD: Hoteis\n");
     printf("--------------------------------------------------\n");
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Listar Hoteis\n");
@@ -125,7 +125,7 @@ void listar()
     file = fopen("./storage/HOTEL.txt", "r");
     if(file == NULL)
     {
-        printf("Repositório de HOTELs inacessivel!\n\n\n\n\n");
+        printf("Repositório de Hoteis inacessivel!\n\n\n\n\n");
     }
     else
     {
