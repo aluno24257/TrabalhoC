@@ -16,9 +16,9 @@ int main()
     printf("OPERAÇÕES CRUD: HOTELs\n");
     printf("--------------------------------------------------\n");
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-    printf("1- Listar dados\n");
+    printf("1- Listar Hoteis\n");
     printf("2- Adicionar novo registo\n");
-    printf("3- Alterar dados\n");
+    printf("3- Alterar Hoteis\n");
     printf("4- Eliminar registos\n");
     printf("5- Voltar\n\n");
     printf("Opção selecionada?   ");
