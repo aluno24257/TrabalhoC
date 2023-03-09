@@ -143,7 +143,7 @@ void adicionar()
     int num;
     bool isDeleted = false;
     FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10], IDaluno[10], IDuc[10], nota[10], dump;
+    char data[500], data2[500], *id, *compare, count[10], IDcliente[10], IDgrupohot[10], quarto[10], dump;
     const char s[2] = " ";
 
     file_old = fopen("./storage/GRUPOHOTELEIRO.txt", "r");
@@ -173,17 +173,17 @@ void adicionar()
 
         printf("\e[2J\e[H");
         printf("\n\nInsira o ID do cliente: ");
-        scanf("%s",IDaluno);
+        scanf("%s",IDcliente);
         printf("Insira o ID do Grupo Hoteleiro a avaliar: ");
-        scanf("%s",IDuc);
+        scanf("%s",IDgrupohot);
         printf("Insira a quarto correspondente: ");
-        scanf("%s",nota);
+        scanf("%s",quarto);
         fputs("\n",file_new);
-        fputs(IDaluno ,file_new);
+        fputs(IDcliente ,file_new);
         fputs(" " ,file_new);
-        fputs(IDuc,file_new);
+        fputs(IDgrupohot,file_new);
         fputs(" " ,file_new);
-        fputs(nota,file_new);       
+        fputs(quarto,file_new);       
 
         fclose(file_new);
 
