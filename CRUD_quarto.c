@@ -119,7 +119,7 @@ void listar()
     FILE *file;
     char data[500];
     printf("--------|--------------------------|------\n");
-    printf("ID aluno| ID da Unidade Curricular | Nota \n");
+    printf("ID Cliente| ID do Grupo Hoteleiro | Hotel \n");
     printf("--------|--------------------------|------\n");
     file = fopen("./storage/QUARTO.txt", "r");
     if(file == NULL)
