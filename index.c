@@ -13,7 +13,7 @@
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("Sistema de Registos Escolar\n");
+    printf("Sistema de Registos Hoteleiros\n");
     printf("--------------------------------------------------\n\n");
     printf("Selecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Tabelas\n");
@@ -34,8 +34,17 @@
             break;
         
         case 3:
-            execv(args[2][0],args);
+            printf("\e[2J\e[H");
+            printf("Trabalho feito por Bruno Carreira e Rafael Santos\n");
+            printf("Carregue no Y para continuar\t");
+            while(1)
+                    {
+                        if ('y' == getchar())
+                        break;
+                    }
+            goto boot;
             break;
+        
         case 4:
             printf("\e[2J\e[H");
             warning();

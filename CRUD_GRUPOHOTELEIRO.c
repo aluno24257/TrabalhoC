@@ -47,7 +47,7 @@ int main()
             repeat_add:
             adicionar();
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-            printf("1- Inserir Hotel\n");
+            printf("1- Editar Hotel\n");
             printf("2- Voltar\n\n");
             printf("Opção selecionada?   ");
             scanf("%d",&submenu);
@@ -66,7 +66,7 @@ int main()
             repeat_edit:
             editar();
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-            printf("1- Alterar Hotel\n");
+            printf("1- Inserir Hotel\n");
             printf("2- Voltar\n\n");
             printf("Opção selecionada?   ");
             scanf("%d",&submenu);
