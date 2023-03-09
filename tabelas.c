@@ -3,7 +3,7 @@
 int main()
 {
     int menu;
-    char *args[5][2]={
+    char *args[6][2]={
         {"./bin/CRUD_hoteis",NULL},
         {"./bin/CRUD_GRUPOHOTELEIRO",NULL},
         {"./bin/CRUD_clientes",NULL},
@@ -22,7 +22,8 @@ int main()
     printf("2- GRUPOHOTELEIRO\n");
     printf("3- clientes\n");
     printf("4- Quarto\n");
-    printf("5- Voltar\n\n");
+    printf("5- Tipo de quarto\n"); /*ATENÇÂO*/
+    printf("6- Voltar\n\n");
 
     printf("Opção selecionada?   ");
     scanf("%d", &menu);
@@ -47,6 +48,10 @@ int main()
 
         case 5:
             execv(args[4][0],args);
+            break;
+
+        case 6:
+            execv(args[5][0],args);
             break;
 
         default:
