@@ -119,9 +119,9 @@ void listar()
     char data[500];
     int i=0, count=0;
     printf("\e[2J\e[H");
-    printf("---|---------------------\n");
-    printf("ID | Descrição do Cliente\n");
-    printf("---|---------------------\n");
+    printf("----|-------------|---------|-------|----------|-------|--------|-----\n");
+    printf("Nif | NumeroTelem |  Genero | Nomes | Apelidos | Email | Cidade | Pais\n");
+    printf("----|-------------|---------|-------|----------|-------|--------|-----\n");
     file = fopen("./storage/CLIENTE.txt", "r");
     if(file == NULL)
     {
