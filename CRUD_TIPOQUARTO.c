@@ -13,7 +13,7 @@ int main()
     boot:
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("OPERAÇÕES CRUD: HOTELs\n");
+    printf("OPERAÇÕES CRUD: HOTEL\n");
     printf("--------------------------------------------------\n");
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Listar dados\n");
