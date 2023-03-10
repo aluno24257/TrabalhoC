@@ -119,9 +119,9 @@ void listar()
     char data[500];
     int i=0, count=0;
     printf("\e[2J\e[H");
-    printf("---|---------------------\n");
-    printf("ID | Descrição do hotel\n");
-    printf("---|---------------------\n");
+    printf("---|--------|------------\n");
+    printf("ID | Preço  | Descrição\n");
+    printf("---|--------|------------\n");
     file = fopen("./storage/TIPOQUARTO.txt", "r");
     if(file == NULL)
     {
@@ -146,7 +146,7 @@ void adicionar()
     int num;
     bool isDeleted = false;
     FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump;
+    char data[500], data2[500], *id, *compare, count[10], IDgrupohot[5], Name[100], dump;
     const char s[2] = " ";
 
     file_old = fopen("./storage/TIPOQUARTO.txt", "r");
@@ -176,12 +176,12 @@ void adicionar()
 
         printf("\e[2J\e[H");
         printf("\n\nInsira o novo ID do HOTEL: ");
-        scanf("%s",IDHOTEL);
+        scanf("%s",IDgrupohot);
         printf("Insira a nova descrição para o HOTEL: ");
         scanf("%c", &dump);
         scanf("%[^\n]",Name);
         fputs("\n",file_new);
-        fputs(IDHOTEL ,file_new);
+        fputs(IDgrupohot ,file_new);
         fputs(" " ,file_new);
         fputs(Name,file_new);      
 
@@ -266,7 +266,7 @@ void editar()
     int num;
     bool isEdited = false;
     FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump;
+    char data[500], data2[500], *id, *compare, count[10], IDgrupohot[5], Name[100], dump;
     const char s[2] = " ";
 
     printf("\e[2J\e[H");
@@ -306,11 +306,11 @@ void editar()
                 printf("Valores anteriores: \n");
                 printf("%s",data2);
                 printf("\n\nInsira o novo ID do HOTEL: ");
-                scanf("%s",IDHOTEL);
+                scanf("%s",IDgrupohot);
                 printf("Insira a nova descrição para o HOTEL: ");
                 scanf("%c", &dump);
                 scanf("%[^\n]",Name);
-                fputs(IDHOTEL ,file_new);
+                fputs(IDgrupohot ,file_new);
                 fputs(" " ,file_new);
                 fputs(Name,file_new);
                 fputs("\n",file_new);
