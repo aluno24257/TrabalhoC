@@ -118,9 +118,9 @@ void listar()
     printf("\e[2J\e[H");
     FILE *file;
     char data[500];
-    printf("----------|-----------------------|-------\n");
-    printf("ID Cliente| ID do Grupo Hoteleiro | Hotel \n");
-    printf("----------|-----------------------|-------\n");
+    printf("-------|------------------------|----------\n");
+    printf("Numero | codigoHotel | ocupação | codigoTipoQuarto \n");
+    printf("-------|-------------|----------|----------\n");
     file = fopen("./storage/QUARTO.txt", "r");
     if(file == NULL)
     {

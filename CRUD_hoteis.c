@@ -119,9 +119,9 @@ void listar()
     char data[500];
     int i=0, count=0;
     printf("\e[2J\e[H");
-    printf("---|---------------------\n");
-    printf("ID | Descrição do hotel\n");
-    printf("---|---------------------\n");
+    printf("---|-----------------------------|------|--------|----\n");
+    printf("ID | NifGrupoHoteleio | estrelas | Nome | Cidade | Pais \n");
+    printf("---|------------------|----------|------|--------|----\n");
     file = fopen("./storage/HOTEL.txt", "r");
     if(file == NULL)
     {

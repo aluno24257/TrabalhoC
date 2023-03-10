@@ -16,10 +16,10 @@ int main()
     printf("OPERAÇÕES CRUD: \n");
     printf("--------------------------------------------------\n");
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
-    printf("1.1- Inserir Hotel\n");
-    printf("1.2- Alterar Hotel\n");
-    printf("1.3- Apagar Hotel\n");
-    printf("1.4- Listar Hóteis\n");
+    printf("1- Inserir Hotel\n");
+    printf("2- Alterar Hotel\n");
+    printf("3- Apagar Hotel\n");
+    printf("4- Listar Hóteis\n");
     printf("Opção selecionada?   ");
     scanf("%d", &menu);
 
@@ -117,9 +117,9 @@ void listar()
     printf("\e[2J\e[H");
     FILE *file;
     char data[500];
-    printf("--------|--------------------------|------\n");
-    printf("ID Cliente| ID do Grupo Hoteleiro | Hotel \n");
-    printf("--------|--------------------------|------\n");
+    printf("------|------\n");
+    printf("Nif   | Nome \n");
+    printf("------|------\n");
     file = fopen("./storage/GRUPOHOTELEIRO.txt", "r");
     if(file == NULL)
     {
