@@ -3,18 +3,29 @@
 #include <stdbool.h>
 #include <string.h>
 
+// Declaração das funções
+void listar();
+void adicionar();
+void editar();
+void eliminar();
+
 int main()
 {
     int menu,submenu;
+
+    // Declaração de um array de strings para passar como argumentos para execv()
     char *args[1][2]={
         {"./tabelas",NULL}
     };
 
     boot:
+    // Limpa o ecrã e imprime o cabeçalho do programa
     printf("\e[2J\e[H");
     printf("--------------------------------------------------\n");
-    printf("OPERAÇÕES CRUD: HOTELs\n");
+    printf("OPERAÇÕES CRUD: Clientes\n");
     printf("--------------------------------------------------\n");
+
+    // Menu principal com as opções disponíveis
     printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
     printf("1- Listar dados\n");
     printf("2- Adicionar novo registo\n");
@@ -28,7 +39,7 @@ int main()
     {
         case 1:
             repeat_list:
-            listar();
+            listar(); // Chama a função para listar os dados
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
             printf("1- Voltar\n\n");
             printf("Opção selecionada?   ");
@@ -36,17 +47,17 @@ int main()
             switch(submenu)
             {
                 case 1:
-                    goto boot;
+                    goto boot; // Volta ao menu principal
                     break;
                 default:
-                    goto repeat_list;
+                    goto repeat_list; // Volta a chamar a função para listar dados
                     break;
             }
             break;
         
         case 2:
             repeat_add:
-            adicionar();
+            adicionar(); // Chama a função para adicionar novo registo
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
             printf("1- Adicionar novo registo\n");
             printf("2- Voltar\n\n");
@@ -55,17 +66,17 @@ int main()
             switch(submenu)
             {
                 case 1:
-                    goto repeat_add;
+                    goto repeat_add; // Volta a chamar a função para adicionar novo registo
                     break;
                 default:
-                    goto boot;
+                    goto boot; // Volta ao menu principal
                     break;
             }
             break;
         
         case 3:
             repeat_edit:
-            editar();
+            editar(); // Chama a função para alterar dados
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
             printf("1- Editar outro registo\n");
             printf("2- Voltar\n\n");
@@ -74,17 +85,17 @@ int main()
             switch(submenu)
             {
                 case 1:
-                    goto repeat_edit;
+                    goto repeat_edit; // Volta a chamar a função para alterar dados
                     break;
                 default:
-                    goto boot;
+                    goto boot; // Volta ao menu principal
                     break;
             }
             break;
         
         case 4:
             repeat_delete:
-            eliminar();
+            eliminar(); // Chama a função para eliminar registos
             printf("\nSelecione uma operação. Deverá inserir o numero correspondente à opção pretendida:\n");
             printf("1- Eliminar outro registo\n");
             printf("2- Voltar\n\n");
