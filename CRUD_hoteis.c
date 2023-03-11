@@ -115,13 +115,17 @@ int main()
 
 void listar()
 {
-    FILE *file;
-    char data[500];
-    int i=0, count=0;
+    FILE *file; // ponteiro para o arquivo
+    char data[500]; // variável para armazenar os dados de cada registro
+    int i=0, count=0; // variáveis para controlar o loop e o número total de registros
+
+    // Imprime cabeçalho da tabela
     printf("\e[2J\e[H");
     printf("---|-----------------------------|------|--------|----\n");
     printf("ID | NifGrupoHoteleio | estrelas | Nome | Cidade | Pais \n");
     printf("---|------------------|----------|------|--------|----\n");
+
+    // Abre o arquivo
     file = fopen("./storage/HOTEL.txt", "r");
     if(file == NULL)
     {
@@ -129,60 +133,76 @@ void listar()
     }
     else
     {
-        /*Obtem o total de registos */
+        // Lê o número total de registros do arquivo
         fscanf(file, "%d", &count); 
+
+        // Loop para ler e imprimir cada registro
         do
         {
-            fgets(data,500,file);
-            printf("%s\n", data);
-            i++;
-        }while( i <= count );
-        fclose(file);
+            fgets(data,500,file); // Lê uma linha do arquivo
+            printf("%s\n", data); // Imprime a linha
+            i++; // Incrementa o contador
+        } while ( i <= count ); // Repete até imprimir todos os registros
+
+        fclose(file); // Fecha o arquivo
     }
 }
 
+// Declaração da função "adicionar"
 void adicionar()
 {
-    int num;
-    bool isDeleted = false;
-    FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump;
-    const char s[2] = " ";
+    int num; // Variável para armazenar o número de registros no arquivo
+    bool isDeleted = false; // Variável booleana para verificar se há registros apagados
+    FILE *file_old, *file_new; // Declaração de dois ponteiros para arquivos
+    char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump; // Declaração de variáveis para armazenar dados
+    const char s[2] = " "; // String com o separador de dados
 
+    // Abre o arquivo "HOTEL.txt" em modo leitura
     file_old = fopen("./storage/HOTEL.txt", "r");
+    // Abre o arquivo "HOTEL_new.txt" em modo escrita, para criar um novo arquivo com os dados atualizados
     file_new = fopen("./storage/HOTEL_new.txt", "a");
     
+    // Verifica se o arquivo "HOTEL.txt" pode ser aberto
     if(file_old == NULL)
     {
         printf("Repositório de HOTEL inacessivel!\n\n\n\n\n");
     }
     else
     {
-        /* */
+        /* Cria um novo registro, incrementando o número de registros em 1 */
+        // Lê o primeiro registro do arquivo antigo e armazena o número de registros na variável "num"
         fgets(count,500,file_old);
-        num=atoi(count)+1;
-        sprintf(count, "%d\n", num);
-        fputs(count,file_new);
-        /* */
+        num=atoi(count)+1; // Converte a string "count" em um número inteiro e adiciona 1
+        sprintf(count, "%d\n", num); // Converte o número inteiro em uma string e armazena na variável "count"
+        fputs(count,file_new); // Escreve a nova quantidade de registros no arquivo novo
 
-        while( !feof(file_old) )
+        /* Copia os registros do arquivo antigo para o arquivo novo */
+        while( !feof(file_old) ) // Enquanto não chegar ao final do arquivo antigo
         {
+            // Lê um registro do arquivo antigo e armazena na variável "data"
             fgets(data,500,file_old);
+            // Copia o conteúdo da variável "data" para a variável "data2"
             strncpy(data2, data, sizeof(data));
+            // Escreve o conteúdo da variável "data2" no arquivo novo
             fputs(data2, file_new);
         }
 
+        // Fecha o arquivo antigo
         fclose(file_old);
 
+        /* Adiciona um novo registro ao arquivo */
+        // Limpa a tela do console
         printf("\e[2J\e[H");
+        // Solicita o ID do novo hotel
         printf("\n\nInsira o novo ID do HOTEL: ");
         scanf("%s",IDHOTEL);
+        // Solicita a descrição do novo hotel
         printf("Insira a nova descrição para o HOTEL: ");
-        scanf("%c", &dump);
-        scanf("%[^\n]",Name);
-        fputs("\n",file_new);
-        fputs(IDHOTEL ,file_new);
-        fputs(" " ,file_new);
+        scanf("%c", &dump); // Consome o caractere "newline" deixado pelo scanf anterior
+        scanf("%[^\n]",Name); // Lê uma linha inteira como entrada, até encontrar um caractere "newline"
+        fputs("\n",file_new); // Escreve um caractere "newline" no arquivo novo
+        fputs(IDHOTEL ,file_new); // Escreve o ID do novo hotel no arquivo novo
+        fputs(" " ,file_new); // Escreve um espaço em branco no arquivo novo
         fputs(Name,file_new);      
 
         fclose(file_new);
@@ -196,46 +216,56 @@ void adicionar()
 
 void eliminar()
 {
-    int num;
-    bool isDeleted = false;
-    FILE *file_old, *file_new;
-    char data[500], data2[500], *id, *compare, count[10];
-    const char s[2] = " ";
+    int num; /* variável para armazenar o número de hóteis no arquivo */
+    bool isDeleted = false; /* variável para indicar se o hotel foi encontrado e excluído */
+    FILE *file_old, *file_new; /* ponteiros de arquivo para o arquivo antigo (a ser lido) e o novo (a ser escrito) */
+    char data[500], data2[500], *id, *compare, count[10]; /* variáveis para armazenar dados lidos do arquivo e para manipulação de strings */
+    const char s[2] = " "; /* delimitador para a função strtok */
 
+    /* Limpar a tela e exibir a lista de hotéis existentes */
     printf("\e[2J\e[H"); /*CLEAR*/
     listar();
-    /* */
+
+    /* Abrir o arquivo antigo para leitura e o novo para escrita */
     file_old = fopen("./storage/HOTEL.txt", "r");
     file_new = fopen("./storage/HOTEL_new.txt", "a");
     
+    /* Verificar se o arquivo antigo foi aberto com sucesso */
     if(file_old == NULL)
     {
         printf("Repositório de Hoteis inacessiveis!\n\n\n\n\n");
     }
     else
     {
+        /* Pedir ao usuário que insira o ID do hotel a ser excluído */
         printf("\n\nInserir ID do Hotel a eliminar: ");
         scanf("%s",id);
         
-        /* */
+        /* Ler o número de hotéis do arquivo antigo */
         fgets(count,500,file_old);
         num=atoi(count)-1;
+        /* Subtrair 1 do número de hotéis e escrevê-lo no arquivo novo */
         sprintf(count, "%d\n", num);
         fputs(count,file_new);
-        /* */
 
+        /* Ler os dados do arquivo antigo linha por linha */
         while( !feof(file_old) )
         {
             fgets(data,500,file_old);
+            /* Copiar a linha lida para outra variável para manipulação */
             strncpy(data2, data, sizeof(data));
 
+            /* Obter o ID do hotel na linha atual usando a função strtok */
             compare = strtok(data, s);
+            /* Exibir o ID atual e o ID a ser excluído para fins de depuração */
             printf("%s - compare\n %s - id", compare, id);
+            /* Se o ID atual for diferente do ID a ser excluído, escrever a linha no arquivo novo */
             if(strcmp(id, compare)!=0)
             {
                 printf("\n%s - ignored\n", compare);
                 fputs(data2, file_new);
             }
+            /* Se o ID atual for igual ao ID a ser excluído, marcar a variável isDeleted como true */
             else
             {
                 printf("\n%s - found!\n", compare);
@@ -243,9 +273,11 @@ void eliminar()
             }
         }
 
+        /* Fechar os arquivos antigo e novo */
         fclose(file_old);
         fclose(file_new);
 
+        /* Se o hotel foi encontrado e excluído, renomear o arquivo novo como o arquivo antigo e apagar o arquivo antigo */
         if(isDeleted = true)
         {
             /*apagar file_old*/
@@ -253,6 +285,7 @@ void eliminar()
             /*renomear file_new para HOTEL.txt*/
             rename("./storage/HOTEL_new.txt", "./storage/HOTEL.txt");
         }
+        /* Se o hotel não foi encontrado e excluído, apagar o arquivo novo */
         else
         {
             /* apagar file_new*/
