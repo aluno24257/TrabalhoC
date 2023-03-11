@@ -263,16 +263,20 @@ void eliminar()
 
 void editar()
 {
+    // Declaração de variáveis e inicialização de algumas
     int num;
-    bool isEdited = false;
-    FILE *file_old, *file_new;
+    bool isEdited = false; // Inicialmente, a variável que verifica se o registro foi editado é definida como falso
+    FILE *file_old, *file_new; // Declara dois ponteiros para FILE - um para o arquivo original e outro para o arquivo novo
     char data[500], data2[500], *id, *compare, count[10], IDHOTEL[5], Name[100], dump;
-    const char s[2] = " ";
+    // Declarando variáveis ​​para armazenar os dados de entrada, como o ID do hotel, nome, etc.
+    const char s[2] = " "; // Defina o delimitador de espaço para separar as informações de registro
 
-    printf("\e[2J\e[H");
-    listar();
-    file_old = fopen("./bin/HOTEL.txt", "r");
-    file_new = fopen("./storage/HOTEL_new.txt", "a");
+    printf("\e[2J\e[H"); // Limpa a tela
+    listar(); // Exibe todos os registros de hotel antes da edição
+    file_old = fopen("./bin/HOTEL.txt", "r"); // Abre o arquivo original em modo leitura
+    file_new = fopen("./storage/HOTEL_new.txt", "a"); // Abre o arquivo novo em modo append
+
+    // Se o arquivo original não puder ser aberto, exiba uma mensagem de erro
     if(file_old == NULL)
     {
         printf("Repositório de Hotel inacessivel!\n\n\n\n\n");
@@ -280,31 +284,31 @@ void editar()
     else
     {
         printf("\n\nInserir ID do Hotel a editar: ");
-        scanf("%s",id);
+        scanf("%s",id); // Obtém o ID do hotel que o usuário deseja editar
         
         /* salta a primeira linha do documento - contagem - e escreve-a no novo registo*/
-        fgets(count,500,file_old);
-        fputs(count,file_new);
-        
+        fgets(count,500,file_old); // Lê a primeira linha do arquivo original (o número total de registros) e armazena em count
+        fputs(count,file_new); // Escreve essa primeira linha no novo arquivo também
 
+        // Loop através de todos os registros no arquivo original
         while( !feof(file_old) )
         {
-            fgets(data,500,file_old);
-            strncpy(data2, data, sizeof(data));
+            fgets(data,500,file_old); // Lê uma linha inteira do arquivo original e armazena em data
+            strncpy(data2, data, sizeof(data)); // Copia a linha lida em data para data2
 
-            compare = strtok(data, s);
+            compare = strtok(data, s); // Use a função strtok para extrair o ID do hotel da linha lida em data
             printf("%s - compare\n%s - id", compare, id);
-            if(strcmp(id, compare)!=0)
+            if(strcmp(id, compare)!=0) // Se o ID do hotel lido não for igual ao ID do hotel a ser editado, escreva a linha no novo arquivo
             {
                 printf("\n%s - not a match, ignoring\n", compare);
                 fputs(data2, file_new);
             }
-            else
+            else // Se o ID do hotel lido for igual ao ID do hotel a ser editado, permita que o usuário edite os detalhes
             {
                 printf("\n%s - MATCH FOUND!\n", compare);
-                printf("\e[2J\e[H");
+                printf("\e[2J\e[H"); // Limpa a tela
                 printf("Valores anteriores: \n");
-                printf("%s",data2);
+                printf("%s",data2); // Exibe os valores anteriores antes da edição
                 printf("\n\nInsira o novo ID do HOTEL: ");
                 scanf("%s",IDHOTEL);
                 printf("Insira a nova descrição para o HOTEL: ");
