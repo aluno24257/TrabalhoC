@@ -153,33 +153,38 @@ void listar()
 void adicionar()
 {
     int num;
-    bool isDeleted = false;
-    FILE *file_old, *file_new;
+    bool isDeleted = false; // Variável para indicar se o registro já foi excluído
+    FILE *file_old, *file_new; // Ponteiros para os arquivos antigo e novo
     char data[500], data2[500], *id, *compare, count[10], IDaluno[10], IDuc[10], nota[10], dump;
-    const char s[2] = " ";
+    const char s[2] = " "; // Delimitador de string
 
-    file_old = fopen("./storage/QUARTO.txt", "r");
-    file_new = fopen("./storage/quarto_new.txt", "a");
+    file_old = fopen("./storage/QUARTO.txt", "r"); // Abre o arquivo antigo para leitura
+    file_new = fopen("./storage/quarto_new.txt", "a"); // Cria um novo arquivo para escrita
+
+    if(file_old == NULL) // Verifica se o arquivo antigo foi aberto corretamente
     {
-        printf("Repositório de quarto inacessivel!\n\n\n\n\n");
+        printf("Repositório de quarto inacessivel!\n\n\n\n\n"); // Imprime uma mensagem de erro
     }
     else
     {
-        /* */
-        fgets(count,500,file_old);
         /* Incrementa o número de registros */
         fgets(count,500,file_old); // Lê a primeira linha do arquivo antigo (que contém o número de registros)
         num=atoi(count)+1; // Converte o número de registros para inteiro e adiciona 1
+        sprintf(count, "%d\n", num); // Converte o novo número de registros de volta para string
+        fputs(count,file_new); // Escreve o novo número de registros no arquivo novo
 
-        while( !feof(file_old) )
+        /* Copia os registros do arquivo antigo para o novo */
+        while( !feof(file_old) ) // Enquanto não atingir o final do arquivo antigo
         {
-            fgets(data,500,file_old);
+            fgets(data,500,file_old); // Lê uma linha do arquivo antigo
+            strncpy(data2, data, sizeof(data)); // Copia a linha para uma nova variável de string
             fputs(data2, file_new); // Escreve a linha no arquivo novo
         }
 
-        fclose(file_old);
+        fclose(file_old); // Fecha o arquivo antigo
 
-        printf("\e[2J\e[H");
+        /* Lê as informações do novo registro e escreve no arquivo novo */
+        printf("\e[2J\e[H"); // Limpa a tela do console
         printf("\n\nInsira o ID do cliente: ");
         scanf("%s",IDaluno);
         printf("Insira o ID do Grupo Hoteleiro a avaliar: ");
