@@ -1,9 +1,0 @@
-8
-10 80.00 Single
-20 100.00 Double
-30 100.00 Twin
-40 165.50 Triple
-50 180.00 Quad
-60 299.00 Standard Suite
-70 570.99 Executive Suite
-80 1500.00 Premium Suite
