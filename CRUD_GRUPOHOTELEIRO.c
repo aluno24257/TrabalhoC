@@ -172,9 +172,9 @@ void adicionar()
         fclose(file_old);
 
         printf("\e[2J\e[H");
-        printf("\n\nInsira o ID do Grupo Hoteleiro: ");
+        printf("\n\nInsira o nif do Grupo Hoteleiro: ");
         scanf("%s",IDcliente);
-        printf("Insira o ID do Grupo Hoteleiro a avaliar: ");
+        printf("Insira o nif do Grupo Hoteleiro a avaliar: ");
         scanf("%s",IDgrupohot);
         printf("Insira o Grupo Hoteleiro correspondente: ");
         scanf("%s",quarto);
@@ -215,9 +215,9 @@ void eliminar()
     }
     else
     {
-        printf("\n\nInserir ID do Grupo Hoteleiro: ");
+        printf("\n\nInserir nif do Grupo Hoteleiro: ");
         scanf("%s",idA);
-        printf("\nInserir ID do Grupo Hoteleiro: ");
+        printf("\nInserir nif do Grupo Hoteleiro: ");
         scanf("%s",id);
         
         /*Counter Updater*/
@@ -288,7 +288,7 @@ void editar()
     }
     else
     {
-        printf("\n\nInserir ID do Grupo Hoteleiro a editar: ");
+        printf("\n\nInserir nif do Grupo Hoteleiro a editar: ");
         scanf("%s",id);
         
         /* salta a primeira linha do documento - contagem - e escreve-a no novo registo*/
@@ -314,7 +314,7 @@ void editar()
                 printf("\e[2J\e[H");
                 printf("Valores anteriores: \n");
                 printf("%s",data2);
-                printf("\n\nInsira o novo ID Grupo de Hoteleiro: ");
+                printf("\n\nInsira o novo nif Grupo de Hoteleiro: ");
                 scanf("%s",IDcurso);
                 printf("Insira a nova descrição para o Grupo Hoteleiro: ");
                 scanf("%c", &dump);
