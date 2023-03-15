@@ -123,7 +123,7 @@ void listar()
     file = fopen("./storage/GRUPOHOTELEIRO.txt", "r");
     if(file == NULL)
     {
-        printf("Repositório de quarto inacessivel!\n\n\n\n\n");
+        printf("Repositório de Grupo Hoteleiro inacessivel!\n\n\n\n\n");
     }
     else
     {
@@ -151,7 +151,7 @@ void adicionar()
     
     if(file_old == NULL)
     {
-        printf("Repositório de quarto inacessivel!\n\n\n\n\n");
+        printf("Repositório de Grupo Hoteleiro inacessivel!\n\n\n\n\n");
     }
     else
     {
@@ -172,11 +172,11 @@ void adicionar()
         fclose(file_old);
 
         printf("\e[2J\e[H");
-        printf("\n\nInsira o ID do cliente: ");
+        printf("\n\nInsira o ID do Grupo Hoteleiro: ");
         scanf("%s",IDcliente);
         printf("Insira o ID do Grupo Hoteleiro a avaliar: ");
         scanf("%s",IDgrupohot);
-        printf("Insira a quarto correspondente: ");
+        printf("Insira o Grupo Hoteleiro correspondente: ");
         scanf("%s",quarto);
         fputs("\n",file_new);
         fputs(IDcliente ,file_new);
@@ -211,13 +211,13 @@ void eliminar()
     
     if(file_old == NULL)
     {
-        printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
+        printf("Repositório de Grupo Hoteleiro inacessivel!\n\n\n\n\n");
     }
     else
     {
-        printf("\n\nInserir ID do cliente: ");
+        printf("\n\nInserir ID do Grupo Hoteleiro: ");
         scanf("%s",idA);
-        printf("\nInserir ID do hotel: ");
+        printf("\nInserir ID do Grupo Hoteleiro: ");
         scanf("%s",id);
         
         /*Counter Updater*/
@@ -284,11 +284,11 @@ void editar()
     file_new = fopen("./storage/HOTEL_new.txt", "a");
     if(file_old == NULL)
     {
-        printf("Repositório de hoteis inacessivel!\n\n\n\n\n");
+        printf("Repositório do Grupo Hoteleiro inacessivel!\n\n\n\n\n");
     }
     else
     {
-        printf("\n\nInserir ID do hoteis a editar: ");
+        printf("\n\nInserir ID do Grupo Hoteleiro a editar: ");
         scanf("%s",id);
         
         /* salta a primeira linha do documento - contagem - e escreve-a no novo registo*/
@@ -314,9 +314,9 @@ void editar()
                 printf("\e[2J\e[H");
                 printf("Valores anteriores: \n");
                 printf("%s",data2);
-                printf("\n\nInsira o novo ID do hoteis: ");
+                printf("\n\nInsira o novo ID Grupo de Hoteleiro: ");
                 scanf("%s",IDcurso);
-                printf("Insira a nova descrição para o hotel: ");
+                printf("Insira a nova descrição para o Grupo Hoteleiro: ");
                 scanf("%c", &dump);
                 scanf("%[^\n]",Name);
                 fputs(IDcurso ,file_new);
