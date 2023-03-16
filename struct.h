@@ -1,5 +1,11 @@
 #include <stdbool.h>
 
+
+void tabela();
+void consulta();
+void acerca();
+
+
 typedef struct 
 {
     int nif;
@@ -53,7 +59,7 @@ typedef struct
     int numeroQuarto;
     int codigoHotel;
     int numeroAdultos;
-    //int numeroCriancas;
+    int numeroCriancas;
     int dataEntrada;
     int dataSaida;
     
