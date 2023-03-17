@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "funcoes.h"
+#include "struct.h"
 
 struct Quarto {
     int numero;
@@ -10,8 +11,9 @@ struct Quarto {
     int codigoTipoQuarto;
 };
 
+int alterarTQuarto(TipoQuarto *tq, int tanTQuarto){
 void adicionar_quarto() {
-    struct Quarto quarto;
+    struct Quarto;
     printf("Digite o numero do quarto: ");
     scanf("%d", &quarto.numero);
     printf("Digite o codigo do hotel: ");
@@ -26,7 +28,7 @@ void adicionar_quarto() {
     fclose(arquivo);
     printf("Quarto adicionado com sucesso!\n");
 }
-
+}
 void editar_quarto() {
     int numero;
     printf("Digite o numero do quarto a ser editado: ");
@@ -74,4 +76,13 @@ void remover_quarto() {
 
     fclose(arquivoAntigo);
     fclose(arquivoNov
-*/
+
+
+void listar_quartos(Quarto quartos[], int num_quartos) {
+    int i;
+    printf("Lista de quartos:\n");
+    printf("Numero | Codigo Hotel | Ocupacao | Codigo Tipo de Quarto\n");
+    for (i = 0; i < num_quartos; i++) {
+        printf("%6d | %12d | %8d | %19d\n", quartos[i].numero, quartos[i].codigoHotel, quartos[i].ocupacao, quartos[i].codigoTipoQuarto);
+    }
+}*/

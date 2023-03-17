@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "struct.h"
 #include "funcoes.h"
+#include "funcoes.c"
+
 
 int main()
 {
@@ -90,11 +92,11 @@ int main()
                         {
                         case 1:
                             system("clear");
-                            adicionar_quarto();
+                            adicionar_quarto(q);
                             break;
                         case 2:
                             system("clear");
-                            editar_quarto()// código para alterar um quarto
+                            editar_quarto();// código para alterar um quarto
                         case 3:
                             system("clear");
                            // código para apagar um quarto
