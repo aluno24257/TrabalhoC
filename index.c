@@ -96,10 +96,10 @@ int main()
                             break;
                         case 2:
                             system("clear");
-                            editar_quarto();// código para alterar um quarto
+                            editar_quarto(); // código para alterar um quarto
                         case 3:
                             system("clear");
-                           // código para apagar um quarto
+                            // código para apagar um quarto
                             break;
                         case 4:
                             // código para listar os quartos
