@@ -1,11 +1,6 @@
 #include <stdbool.h>
 
 
-void tabela();
-void consulta();
-void acerca();
-
-
 typedef struct 
 {
     int nif;

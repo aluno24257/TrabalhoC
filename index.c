@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <struct.h>
+#include "struct.h"
+#include "funcoes.h"
 
 int main()
 {
-    int opMenu, subMenu, CRUD;
+    int pMenu, sMenu, CRUD, opcaoCRUD, t;
    
     do
     {
@@ -15,9 +16,9 @@ int main()
         printf("3.Acerca\n");
         printf("4.Sair\n\n");
         printf("-->");
-        scanf("%d", &opMenu);
+        scanf("%d", &pMenu);
 
-        switch (opMenu)
+        switch (pMenu)
         {
         case 1:
             do
@@ -32,8 +33,8 @@ int main()
                 printf("6.Reservas\n");
                 printf("7.Voltar\n\n");
                 printf("-->");
-                scanf("%d", &subMenu);
-                switch (subMenu)
+                scanf("%d", &sMenu);
+                switch (sMenu)
                 {
                 case 1:
                     do
@@ -46,8 +47,8 @@ int main()
                         printf("4.Listar\n");
                         printf("5.Voltar\n\n");
                         printf("->");
-                        scanf("%d", &opCRUD);
-                        switch (opCRUD)
+                        scanf("%d", &opcaoCRUD);
+                        switch (opcaoCRUD)
                         {
                         case 1:
                             system("clear");
@@ -89,24 +90,24 @@ int main()
                         {
                         case 1:
                             system("clear");
-                            
+                            adicionar_quarto();
                             break;
                         case 2:
                             system("clear");
-                           
+                            editar_quarto()// código para alterar um quarto
                         case 3:
                             system("clear");
-                           
+                           // código para apagar um quarto
                             break;
                         case 4:
-                            
+                            // código para listar os quartos
                             break;
                         case 5:
                      
                             break;
                         }
 
-                    } while (opCRUD != 5);
+                    } while (opcaoCRUD != 5);
                     break;
                 case 3:
                     do
@@ -244,7 +245,7 @@ int main()
                     } while (CRUD != 5);
                     break;
                 }
-            } while (subMenu != 7);
+            } while (sMenu != 7);
             break;
         case 2:
             system("clear");
@@ -265,7 +266,7 @@ int main()
             break;
         }
 
-    } while (opMenu != 4);
+    } while (pMenu != 4);
 
     return 0;
 }
