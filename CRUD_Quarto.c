@@ -37,7 +37,7 @@ void editar_quarto() {
     FILE *arquivoAntigo = fopen("./storage/QUARTO.txt", "r");
     FILE *arquivoNovo = fopen("./storage/QUARTO_novo.txt", "w");
 
-    struct Quarto quarto;
+    Quarto quarto;
     while (fscanf(arquivoAntigo, "%d|%d|%d|%d\n", &quarto.numero, &quarto.codigoHotel, &quarto.ocupacao, &quarto.codigoQuarto) != EOF) {
         if (quarto.numero == numero) {
             printf("Digite o codigo do hotel: ");
@@ -67,7 +67,7 @@ void editar_quarto() {
     FILE *arquivoAntigo = fopen("./storage/QUARTO.txt", "r");
     FILE *arquivoNovo = fopen("./storage/QUARTO_novo.txt", "w");
 
-    struct Quarto quarto;
+    Quarto quarto;
     while (fscanf(arquivoAntigo, "%d|%d|%d|%d\n", &quarto.numero, &quarto.codigoHotel, &quarto.ocupacao, &quarto.codigoQuarto) != EOF) {
         if (quarto.numero != numero) {
             fprintf(arquivoNovo, "%d|%d|%d|%d\n", quarto.numero, quarto.codigoHotel, quarto.ocupacao, quarto.codigoQuarto);
