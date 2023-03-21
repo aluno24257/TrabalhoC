@@ -3,7 +3,6 @@
 #include <string.h>
 #include "struct.h"
 
-
 struct Quarto {
     int numero;
     int codigoHotel;
@@ -78,11 +77,23 @@ void editar_quarto() {
     fclose(arquivoNovo);
 
 
-void listar_quartos(Quarto quartos[], int num_quartos) {
-    int i;
-    printf("Lista de quartos:\n");
-    printf("Numero | Codigo Hotel | Ocupacao | Codigo Tipo de Quarto\n");
-    for (i = 0; i < num_quartos; i++) {
-        printf("%6d | %12d | %8d | %19d\n", quartos[i].numero, quartos[i].codigoHotel, quartos[i].ocupacao, quartos[i].codigoQuarto);
+void listarQuartos() {
+    FILE *arquivo = fopen("./storage/QUARTO.txt", "r");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return;
     }
+
+    Quarto quarto;
+    printf("\nListagem de Quartos:\n");
+    while (fscanf(arquivo, "%d %d %d %d\n", &quarto.numero, &quarto.codigoHotel,
+                  &quarto.ocupacao, &quarto.codigoQuarto) != EOF) {
+        printf("Numero: %d\n", quarto.numero);
+        printf("Codigo do Hotel: %d\n", quarto.codigoHotel);
+        printf("Ocupacao: %d\n", quarto.ocupacao);
+        printf("Codigo do Tipo de Quarto: %d\n", quarto.codigoQuarto);
+        printf("\n");
+    }
+
+    fclose(arquivo);
 }

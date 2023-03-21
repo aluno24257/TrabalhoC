@@ -89,17 +89,17 @@ int main()
                         {
                         case 1:
                             system("clear");
-                            adicionar_quarto(q);
+                            adicionar_quarto();
                             break;
                         case 2:
                             system("clear");
                             editar_quarto(); // código para alterar um quarto
                         case 3:
                             system("clear");
-                            remover_quarto()// código para apagar um quarto
+                            remover_quarto();// código para apagar um quarto
                             break;
                         case 4:
-                            listar_quarto()// código para listar os quartos
+                            listarQuartos();// código para listar os quartos
                             break;
                         case 5:
                      
